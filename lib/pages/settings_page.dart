@@ -1,7 +1,9 @@
+import 'package:explorego/pages/login_page.dart';
+import 'package:explorego/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/foundation.dart';
-import '../models/userprovider.dart';
+import 'package:explorego/providers/user_provider.dart';
+import 'package:explorego/resources/auth_methods.dart';
 
 const Color notActiveColor = Color.fromARGB(255, 106, 111, 141);
 const Color activeColor = Color.fromARGB(255, 195, 10, 4);
@@ -10,15 +12,44 @@ const Color backgroundColor = Color.fromARGB(255, 248, 249, 252);
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
+  _promptUserLogoutDialoug(BuildContext parentContext) {
+    return showDialog(
+        context: parentContext,
+        builder: (BuildContext context) {
+          return SimpleDialog(
+            title: Text("Are you sure?"),
+            children: <Widget>[
+              SimpleDialogOption(
+                padding: const EdgeInsets.all(20),
+                child: const Text("Logout"),
+                onPressed: () {
+                  AuthMethods().signOut();
+                  showSnackBar(context, "Logged Out.");
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const LoginPage()));
+                },
+              ),
+              SimpleDialogOption(
+                padding: const EdgeInsets.all(20),
+                child: const Text("Cancel"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
               elevation: 0,
-              title: const Center(
-                  child: Text("Settings",
-                      style: TextStyle(fontSize: 20, color: Colors.black))),
+              centerTitle: true,
+              title: const Text("Settings",
+                  style: TextStyle(fontSize: 20, color: Colors.black)),
               backgroundColor: backgroundColor,
               leading: GestureDetector(
                   onTap: () {
@@ -43,18 +74,18 @@ class SettingsPage extends StatelessWidget {
                         Card(
                             child: Consumer<UserProvider>(
                                 builder: (context, userProv, child) => ListTile(
-                                      title: Text(userProv.users[0].name,
+                                      title: Text(userProv.getUser.name,
                                           style: const TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold,
                                           )),
-                                      subtitle: Text(userProv.users[0].email,
+                                      subtitle: Text(userProv.getUser.email,
                                           style: const TextStyle(fontSize: 15)),
                                       dense: true,
                                       leading: CircleAvatar(
                                           radius: 25,
-                                          backgroundImage: AssetImage(
-                                              userProv.users[0].imagePath)),
+                                          backgroundImage: NetworkImage(
+                                              userProv.getUser.photoUrl)),
                                       trailing: Container(
                                         decoration: const BoxDecoration(
                                             color: Color.fromARGB(
@@ -265,13 +296,11 @@ class SettingsPage extends StatelessWidget {
                             color: Color.fromARGB(255, 63, 103, 248), width: 2),
                         primary: Colors.white,
                       ),
+                      onPressed: () => _promptUserLogoutDialoug(context),
                       child: const Text("Log Out",
                           style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 63, 103, 248))),
-                      onPressed: () {
-                        print("hey");
-                      },
                     )))));
   }
 }

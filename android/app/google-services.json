@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "953182524873",
+    "firebase_url": "https://explorego-d5f85-default-rtdb.firebaseio.com",
+    "project_id": "explorego-d5f85",
+    "storage_bucket": "explorego-d5f85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953182524873:android:ba5e4e8a3be65decf0c418",
+        "android_client_info": {
+          "package_name": "com.example.explorego"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953182524873-bvs88rqrmfvh23kctrc3mup652juljo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAEw_26tCeRGVy6TA7f6eJCfMTonH3qWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953182524873-bvs88rqrmfvh23kctrc3mup652juljo7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "953182524873-89iaa3f06e8h1fochmpga9q1kbqgbq2m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.explorego"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>953182524873-89iaa3f06e8h1fochmpga9q1kbqgbq2m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.953182524873-89iaa3f06e8h1fochmpga9q1kbqgbq2m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNuimAytYD4lEdsVcWSJ-eyXEligZrrpQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>953182524873</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.explorego</string>
+	<key>PROJECT_ID</key>
+	<string>explorego-d5f85</string>
+	<key>STORAGE_BUCKET</key>
+	<string>explorego-d5f85.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:953182524873:ios:a7d3d69886877254f0c418</string>
+	<key>DATABASE_URL</key>
+	<string>https://explorego-d5f85-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
